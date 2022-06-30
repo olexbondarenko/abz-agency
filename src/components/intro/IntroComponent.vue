@@ -61,4 +61,30 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 1199px) {
+  .intro {
+    .container {
+      width: 100%;
+      padding: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .intro {
+    &__main {
+      padding-top: 89px;
+      padding-bottom: 88px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .intro {
+    &__main {
+      padding: 40px 16px 71px;
+    }
+  }
+}
 </style>

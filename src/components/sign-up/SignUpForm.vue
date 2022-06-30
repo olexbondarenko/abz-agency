@@ -1,83 +1,85 @@
 <template>
   <section id="sign-up" class="sign-up">
-    <template v-if="!isUserRegistered">
-      <h1 class="sign-up__title">Working with POST request</h1>
+    <div class="container">
+      <template v-if="!isUserRegistered">
+        <h1 class="sign-up__title">Working with POST request</h1>
 
-      <form class="sign-up__form" v-if="!isUserRegistered">
-        <div class="sign-up__fields">
-          <SignUpTextField
-            :type="userName.type"
-            v-model="userName.value"
-            :id="userName.id"
-            :name="userName.name"
-            :label="userName.label"
-            :message="userName.message"
-            :errorMessage="userName.errorMessage"
-            :hasError="userName.hasError"
-            :regex="userName.regex"
-            @error="inputErrorHandler"
-          />
-          <SignUpTextField
-            :type="userEmail.type"
-            v-model="userEmail.value"
-            :id="userEmail.id"
-            :name="userEmail.name"
-            :label="userEmail.label"
-            :message="userEmail.message"
-            :errorMessage="userEmail.errorMessage"
-            :hasError="userEmail.hasError"
-            :regex="userEmail.regex"
-            @error="inputErrorHandler"
-          />
-          <SignUpTextField
-            :type="userPhone.type"
-            v-model="userPhone.value"
-            :id="userPhone.id"
-            :name="userPhone.name"
-            :label="userPhone.label"
-            :message="userPhone.message"
-            :errorMessage="userPhone.errorMessage"
-            :hasError="userPhone.hasError"
-            :regex="userPhone.regex"
-            @error="inputErrorHandler"
-          />
-        </div>
-        <div class="sign-up__positions">
-          <div class="sign-up__positions-title">Select your position</div>
-          <SignUpRadioField
-            v-for="(position, key) in getAllPositions"
-            :key="key"
-            v-model="userPosition.value"
-            :position="position"
-          />
-        </div>
-        <div class="sign-up__file">
-          <SignUpFileField
-            v-model="userPhoto.value"
-            :hasError="userPhoto.hasError"
-            :errorMessage="userPhoto.errorMessage"
-            @error="inputErrorHandler"
-          />
-        </div>
-        <div class="sign-up__submit">
-          <button
-            type="button"
-            class="button"
-            :class="{ disabled: !isAvailableSignUp }"
-            @click="signUpUserForm()"
-          >
-            Sign up
-          </button>
-        </div>
-      </form>
-    </template>
-    <template v-else>
-      <h1 class="sign-up__title">User successfully registered</h1>
+        <form class="sign-up__form" v-if="!isUserRegistered">
+          <div class="sign-up__fields">
+            <SignUpTextField
+              :type="userName.type"
+              v-model="userName.value"
+              :id="userName.id"
+              :name="userName.name"
+              :label="userName.label"
+              :message="userName.message"
+              :errorMessage="userName.errorMessage"
+              :hasError="userName.hasError"
+              :regex="userName.regex"
+              @error="inputErrorHandler"
+            />
+            <SignUpTextField
+              :type="userEmail.type"
+              v-model="userEmail.value"
+              :id="userEmail.id"
+              :name="userEmail.name"
+              :label="userEmail.label"
+              :message="userEmail.message"
+              :errorMessage="userEmail.errorMessage"
+              :hasError="userEmail.hasError"
+              :regex="userEmail.regex"
+              @error="inputErrorHandler"
+            />
+            <SignUpTextField
+              :type="userPhone.type"
+              v-model="userPhone.value"
+              :id="userPhone.id"
+              :name="userPhone.name"
+              :label="userPhone.label"
+              :message="userPhone.message"
+              :errorMessage="userPhone.errorMessage"
+              :hasError="userPhone.hasError"
+              :regex="userPhone.regex"
+              @error="inputErrorHandler"
+            />
+          </div>
+          <div class="sign-up__positions">
+            <div class="sign-up__positions-title">Select your position</div>
+            <SignUpRadioField
+              v-for="(position, key) in getAllPositions"
+              :key="key"
+              v-model="userPosition.value"
+              :position="position"
+            />
+          </div>
+          <div class="sign-up__file">
+            <SignUpFileField
+              v-model="userPhoto.value"
+              :hasError="userPhoto.hasError"
+              :errorMessage="userPhoto.errorMessage"
+              @error="inputErrorHandler"
+            />
+          </div>
+          <div class="sign-up__submit">
+            <button
+              type="button"
+              class="button"
+              :class="{ disabled: !isAvailableSignUp }"
+              @click="signUpUserForm()"
+            >
+              Sign up
+            </button>
+          </div>
+        </form>
+      </template>
+      <template v-else>
+        <h1 class="sign-up__title">User successfully registered</h1>
 
-      <div class="sign-up__success">
-        <img src="@/assets/images/success-image.svg" alt="" />
-      </div>
-    </template>
+        <div class="sign-up__success">
+          <img src="@/assets/images/success-image.svg" alt="" />
+        </div>
+      </template>
+    </div>
   </section>
 </template>
 
@@ -290,7 +292,7 @@ export default {
   }
 
   &__file {
-    margin-bottom: 50px;
+    margin-bottom: 48px;
   }
 
   &__submit {

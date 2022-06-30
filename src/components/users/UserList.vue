@@ -106,4 +106,22 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 991px) {
+  .user-list {
+    &__col {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .user-list {
+    &__col {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+}
 </style>
