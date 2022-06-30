@@ -73,6 +73,7 @@
     </template>
     <template v-else>
       <h1 class="sign-up__title">User successfully registered</h1>
+
       <div class="sign-up__success">
         <img src="@/assets/images/success-image.svg" alt="" />
       </div>
